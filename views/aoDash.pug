@@ -11,14 +11,21 @@ head
       // Form Name
       legend
         center
-          h2
+          h1
             b Agricultural Officer Dashboard
       br
       br
+      input#productimage(type="file" name="productimage")
+      input#productimage(type="number" name="amount")
+      br
+      br
+      input#product(type="submit" value="submit")
       br
       br
       form(method="POST" action='/logout')
         button.btn(type= 'submit' width='100px') Signout
+      br
+      // img(src="/public/image/productsimage.jpg", alt="Image to be uploaded")
   
       
       // Button

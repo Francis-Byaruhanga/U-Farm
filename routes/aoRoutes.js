@@ -4,7 +4,9 @@ const connectEnsureLogin = require("connect-ensure-login");
 const Products = require("../models/productsModel");
 const multer = require("multer")
 
-let storage = multer.diskStorage({destination:"/public/products", filename:(req,file,cb)=>{cb(null,file.originalname)}})
+let storage = multer.diskStorage({
+  destination:(req,file,cb)=>{cb(null,"public/products")},
+  filename:(req,file,cb)=>{cb(null,file.originalname)}})
 let imageupload = multer({storage:storage})
 // connectEnsureLogin.ensureLoggedIn(),
 
@@ -14,9 +16,9 @@ router.get("/aodash", (req,res)=>{
 router.post("/aodash", imageupload.single("productimage"),(req,res)=>{
   console.log(req.file)
   try{
-    const product = new Products(req.body)
-    productsModel.productimage = req.file.originalname
-    productsModel.save()
+    const products = new Products(req.body)
+    products.productimage = req.file.originalname
+    products.save()
     res.redirect("/aodash")
   } catch (error) {
     res.send("upload failed ${error}")
@@ -25,9 +27,9 @@ router.post("/aodash", imageupload.single("productimage"),(req,res)=>{
 });
 
 
-router.get("/aodash", connectEnsureLogin.ensureLoggedIn(), (req,res)=>{
-    res.render("aoDash")
-  }); 
+// router.get("/aodash", connectEnsureLogin.ensureLoggedIn(), (req,res)=>{
+//     res.render("aoDash")
+//   }); 
 
 
 module.exports = router;

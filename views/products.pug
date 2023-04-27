@@ -21,7 +21,7 @@ head
                 each products in data 
                     amount #{products.amount}
                     br
-                    img(src="/public/products/" + product.productimage, alt="image to be uploaded")
+                    img(src=product.productimage, alt="image to be uploaded")
 
             // Button
             //.form-group
@@ -29,7 +29,7 @@ head
                 .col-md-4 
                     br
                     button.btn.btn-warning(typr='submit') SUBMIT
-
+ 
 
 
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')

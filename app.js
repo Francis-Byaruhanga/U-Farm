@@ -47,6 +47,13 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(express.static(path.join(__dirname, " public/products")))
+// Support parsing of application/json type post data
+app.use(bodyParser.json());
+
+// Support parsing of applications/x-www-form-urlencoded data
+app.use(bodyParser.urlencoded({ extended: true}));
+
 
   
 
