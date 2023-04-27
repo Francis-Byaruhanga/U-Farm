@@ -1,0 +1,127 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Ultimate Farm
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/stylesheet.css')
+  style. 
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    }
+      .stretch{
+          width: 100%;
+          min-height: 100vh;
+          background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(/img/background.jpg);
+          background-size: cover;
+          background-position: center;
+          padding: 10px 8%;
+      }
+      nav{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 0;
+      }
+
+      .logo{
+          width: 180px;
+          cursor: pointer;
+      }
+
+      nav ul{
+          list-style: none;
+          width: 100%;
+          text-align: right;
+          padding-right: 60px;
+      }
+
+      nav ul li{
+          display: inline-block;
+          margin: 10px 20px;
+      }
+
+      nav ul li a{
+          color: #fff;
+          text-decoration: none;
+      }
+
+      .btn{
+          display:flex;
+          align-items: center;
+          padding: 10px 20px;
+          border: 0;
+          outline: 0;
+          border-radius: 5px;
+          background: #f51;
+          color: #fff;
+          font-weight: 500;
+          cursor: pointer;
+      }
+
+      .content{
+          margin-top: 5%;
+          color: #fff;
+          max-width: 620px;
+      }
+
+      .content h1{
+          font-size: 70px;
+          font-weight: 600;
+          line-height: 65px;
+          margin-bottom: 25px;
+      }
+
+      .content form{
+          display: flex;
+          align-items: center;
+          background: #fff;
+          border-radius: 5px;
+          padding: 10px;
+          margin-top: 30px;
+      }
+
+      .content form input{
+          border: 0;
+          outline: 0;
+          width: 100%;
+          font-size: 16px;
+          padding-left: 10px;
+      }
+
+      .content form .btn{
+          font-size: 15px;
+          padding: 10px 30px;
+      }
+
+
+.stretch
+  nav
+    img.logo(src="/img/UFarm Logo.png")
+    ul
+      li
+        a(href='#') View Products
+      li
+        a(href='#') About Us
+      li
+        a(href='#') Contact Us
+    button.btn Login
+  .content
+    h1
+      | Place your orders for
+      br
+      | seamless delivery
+    p
+      | Streamlining the supply chain to ensure consistent and quality supply of Honey, Poultry &amp; Diary Products
+    form
+      input(type='text' placeholder='Product name')
+      button.btn(type='submit') Search
+
+script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js' integrity='sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js' integrity='sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ' crossorigin='anonymous')

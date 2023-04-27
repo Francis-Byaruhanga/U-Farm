@@ -13,7 +13,7 @@ router.post("/register", async(req,res)=>{
     try{
         const register = new Register(req.body);
         await register.save()
-        res.redirect("/students")
+        res.redirect("/farmers")
         console.log(req.body)
     }
     catch(err){
@@ -21,25 +21,25 @@ router.post("/register", async(req,res)=>{
     }
 })
 
-router.get("/students", connectEnsureLogin.ensureLoggedIn(), async(req,res)=>{
+router.get("/farmers", connectEnsureLogin.ensureLoggedIn(), async(req,res)=>{
     try{
         let items = await Register.find();
         // console.log(items)
         let fees = await Register.aggregate([
             {
                 "$group": {_id: "$all", 
-                totalFees:{$sum: "$fees"}   }
+                totalRevenue:{$sum: "$revenue"}}
             }
         ])
-        res.render("students",{students:items, total:fees[0]})
+        res.render("farmers",{farmers:items, total:Revenue[0]})
     }
     catch(err){
         console.log(err)
-        res.send("Failed to retrieve student details")
+        res.send("Failed to retrieve farmer details")
     } 
   }); 
   
-router.post("/students/delete", async(req,res)=>{
+router.post("/farmers/delete", async(req,res)=>{
     try{
         await Register.deleteOne({_id:req.body.id});
         res.redirect("back")
@@ -49,25 +49,25 @@ router.post("/students/delete", async(req,res)=>{
     }
 });
 
-router.get("/edit_student/:id", async(req,res)=>{
+router.get("/edit_farmer/:id", async(req,res)=>{
     try{
         const item= await Register.findOne({_id:req.params.id});
-        res.render("student_edit", {student:item});
+        res.render("farmer_edit", {farmer:item});
     }
     catch(err){
-        res.send("Could not find student");
+        res.send("Could not find farmer");
         console.log(err)
     }
 })
 
 
-router.post("/edit_student", async(req, res)=>{
+router.post("/edit_farmer", async(req, res)=>{
     try{
         await Register.findOneAndUpdate({_id:req.query.id}, req.body)
-        res.redirect("/students")
+        res.redirect("/farmer")
     }
     catch(err){
-        res.send("Could not find student");
+        res.send("Could not find farmer");
         console.log(err)
     }
 })

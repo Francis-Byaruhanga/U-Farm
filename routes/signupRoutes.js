@@ -19,7 +19,7 @@ router.get("/signup",(req,res)=>{
           if(error){
             throw error
           }
-          res.redirect("/students")
+          res.redirect("/farmers")
         })
       }
     }

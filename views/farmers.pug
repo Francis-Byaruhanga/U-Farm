@@ -14,7 +14,7 @@ head
 
 .container
     h3 
-        | Total Fees Paid: #{total.totalFees}
+        | Total Revenue: #{total.totalRevenue}
     br
     br
     br
@@ -32,28 +32,28 @@ head
                 th(scope='col') Language
                 th(scope='col') City
                 th(scope='col') Age
-                th(scope='col') Fees 
+                th(scope='col') Revenue 
                 th(scope='col') action 
                 th(scope='col') action 
         tbody
-        if students.length 
-            each student in students 
+        if farmer.length 
+            each farmer in farmers 
                 tr          
-                    td #{student.fullname} 
-                    td #{student.phone}  
-                    td #{student.address}  
-                    td #{student.language}  
-                    td #{student.city}  
-                    td #{student.age}  
-                    td #{student.fees}  
+                    td #{farmer.fullname} 
+                    td #{farmer.phone}  
+                    td #{farmer.address}  
+                    td #{farmer.language}  
+                    td #{farmer.city}  
+                    td #{farmer.age}  
+                    td #{farmer.fees}  
                     td 
                         form(method="post", action="/students/delete")
-                            input(type="hidden", name="id", value=student.id) 
+                            input(type="hidden", name="id", value=farmer.id) 
                             button.btn.btn-danger(type="submit") Delete
                     td  
-                        a.btn.btn-dark.btn-block(href="/edit_student/"+student.id) Edit    
+                        a.btn.btn-dark.btn-block(href="/edit_farmer/"+farmer.id) Edit    
         else 
-            p there are no students in the database             
+            p there are no farmers in the database             
 
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
 script(src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')

@@ -6,13 +6,13 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
 .container
-  form#contact_form.well.form-horizontal(name='editStudent' action='/edit_student?id='+student._id method='post') 
+  form#contact_form.well.form-horizontal(name='editFarmer' action='/edit_farmer?id='+farmer._id method='post') 
     fieldset
       // Form Name
       legend
         center
           h2
-            b Edit Student
+            b Edit Farmer 
       br
       // Text input
       .form-group
@@ -21,7 +21,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='fullname' type='text' value=student.fullname )
+            input.form-control(name='fullname' type='text' value=farmer.fullname )
       // Text input
       .form-group
         label.col-md-4.control-label Phone number
@@ -29,7 +29,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='phone' type='text' value=student.phonenumber )
+            input.form-control(name='phone' type='text' value=farmer.phonenumber )
      
       // Text input
       .form-group
@@ -38,7 +38,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='address'  type='text' value=student.address)
+            input.form-control(name='address'  type='text' value=farmer.address)
       // Text input
       .form-group
         label.col-md-4.control-label Language
@@ -46,7 +46,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='language' type='text' value=student.language) 
+            input.form-control(name='language' type='text' value=farmer.language) 
       // Text input
       .form-group
         label.col-md-4.control-label City
@@ -54,7 +54,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='city' type='text' value=student.city)
+            input.form-control(name='city' type='text' value=farmer.city)
       // Num input
       .form-group
         label.col-md-4.control-label Age
@@ -62,15 +62,15 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-envelope
-            input.form-control(name='age'  type='number' value=student.age disabled)
+            input.form-control(name='age'  type='number' value=farmer.age disabled)
       // Num input
       .form-group
-        label.col-md-4.control-label Fees
+        label.col-md-4.control-label Revenue 
         .col-md-4.inputGroupContainer
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-envelope
-            input.form-control(name='fees'  type='number' value=student.age)
+            input.form-control(name='fees'  type='number' value=farmer.age)
       // Text input
       //.form-group
         label.col-md-4.control-label Contact No.
